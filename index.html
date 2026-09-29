@@ -1,62 +1,304 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="ar" dir="rtl">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="index.css">
-  <script src="index.js"></script>
-  <title>html AFAQ</title>
-  </head>
-  <body>
-<h1 style="text-align:  center; font-size: 32px;">AFAQ🧭</h1>
-<p style="text-align:center;font-size:20px;"margin-top:200px;>Welcome to <strong>AFAQ</strong></p>
-<h2> من نحن </h2>آفاق هي مساحة صُممت لكل شخص يبحث عن فرصة ليتعلم، يتطور، ويصنع لنفسه طريقًا أفضل.
-نحن نؤمن أن لكل إنسان قدرات وأفكارًا تستحق أن تُكتشف، وأن الوصول إلى المستقبل الذي نريده يبدأ بخطوة واحدة صحيحة. لذلك نهدف من خلال آفاق إلى تقديم محتوى وفرص ومعلومات تساعد الطلاب والشباب على اكتشاف مجالات جديدة، وتطوير مهاراتهم، واتخاذ خطوات أكثر وضوحًا نحو أهدافهم.
-لا نريد أن تكون آفاق مجرد موقع تتصفحه ثم تغادره، بل نريدها أن تكون نقطة بداية تساعدك على اكتشاف ما يناسبك، وتوسيع معرفتك، وتحويل أفكارك وطموحاتك إلى خطوات حقيقيه.
-آفاق... لأن مستقبلك أكبر من أن تتركه للصدفة.</p>
-    <div style="margin-bottom: 60px;">
-    <section class="learning-fields">
-    <h2>اكتشف مسارك</h2>
-    <p>قريباً...</p>  
-    </section> 
-    </div>
-    <h3>التعلم وتطوير المهارات</h3>
-    <p>افتح افقك ... يمكن مهاره واحده تغير طريقك</p>
-    <div class="learning-fields">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <section class="field">
-    <h2>اللغات</h2>
-  </section>
-<div class="english-course">
-  <h2>اللغة الانجليزية</h2>
-  <h3>كورسات اللغة الانجليزية</h3>
-  <ul class="course-item">
-    <li>AUC_كورس اللغة الانجليزية 📚</li>
-    <li>المستوى: تحديد المستوى باختبار🎯</li>
-    <li>المدة : من 4_6 اسابيع⏱️</li>
-    <li>الإنجاز : رقمي عند إتمام الكورس🎖️</li>
-    <li><a href="https://www.aucegypt.edu/academics/free-english-courses">ابدأ الكورس🔗</a></li>
-  </ul>
-  
-  <section class="field">
-    <h2>اللغة الالمانية </h2>
-  </section>
+    <title>آفاق</title>
 
-  <section class="field">
-    <h2>البرمجة</h2>
-  </section>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+</head>
 
-  <section class="field">
-    <h2>الماركتنج</h2>
-  </section>
+<body>
 
-    </div>
+    <!-- Header -->
+    <header class="header">
 
-      
+        <div class="logo">
+            آفاق
+        </div>
+
+        <nav class="navbar">
+            <a href="#" class="active">الرئيسية</a>
+            <a href="#learning">المسارات التعليمية</a>
+            <a href="#learning">الكورسات</a>
+            <a href="#learning">الموارد المجانية</a>
+            <a href="#about">من نحن</a>
+        </nav>
+
+        <a href="#learning" class="header-button">ابدأ التعلم <svg class="arrow" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"/><path d="M11 6l-6 6 6 6"/></svg></a>
+
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <img class="hero-img" src="hero.jpg" alt="">
+        <div class="hero-content">
+            <h1>مرحباً بكم في آفاق</h1>
+            <h2>حلمك مش بعيد.. خطوتك الأولى تبدأ من هنا.</h2>
+            <p>منصة تؤهلك من الصفر للاحتراف<br>بمسار عملي واضح.</p>
+            <a href="#learning" class="hero-button">ابدأ التعلم <svg class="arrow" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"/><path d="M11 6l-6 6 6 6"/></svg></a>
+        </div>
+    </section>
+
+    <!-- من نحن -->
+    <section class="about-section" id="about">
+        <h2>من نحن</h2>
+        <p>
+            آفاق هي مساحة صُممت لكل شخص يبحث عن فرصة ليتعلم، يتطور، ويصنع لنفسه طريقًا أفضل. نحن نؤمن أن لكل إنسان قدرات وأفكارًا تستحق أن تُكتشف، وأن الوصول إلى المستقبل الذي نريده يبدأ بخطوة واحدة صحيحة. لذلك نهدف من خلال آفاق إلى تقديم محتوى وفرص ومعلومات تساعد الطلاب والشباب على اكتشاف مجالات جديدة، وتطوير مهاراتهم، واتخاذ خطوات أكثر وضوحًا نحو أهدافهم. لا نريد أن تكون آفاق مجرد موقع تتصفحه ثم تغادره، بل نريدها أن تكون نقطة بداية تساعدك على اكتشاف ما يناسبك، وتوسيع معرفتك، وتحويل أفكارك وطموحاتك إلى خطوات حقيقية. آفاق... لأن مستقبلك أكبر من أن تتركه للصدفة.
+        </p>
+    </section>
+
+    <!-- اكتشف مسارك -->
+    <section class="quiz-section" id="quiz">
+        <div class="quiz-card">
+            <h2>اكتشف مسارك</h2>
+            <p class="quiz-subtitle">مش عارف تبدأ منين؟ 8 أسئلة صغيرة هيوضحولك طريقك.</p>
+
+            <div id="quiz-box">
+                <div class="quiz-progress"><span id="quiz-bar"></span></div>
+                <p class="quiz-count" id="quiz-count"></p>
+                <h3 class="quiz-question" id="quiz-question"></h3>
+                <div class="quiz-options" id="quiz-options"></div>
+                <div class="quiz-nav">
+                    <button type="button" class="quiz-btn ghost" id="quiz-prev">السابق</button>
+                    <button type="button" class="quiz-btn" id="quiz-next" disabled>التالي</button>
+                </div>
+            </div>
+
+            <div id="quiz-result" class="quiz-result" hidden>
+                <p class="quiz-result-label">المسار الأنسب ليك هو</p>
+                <h3 id="result-title"></h3>
+                <p id="result-text"></p>
+                <div class="quiz-nav">
+                    <a href="#learning" class="quiz-btn">ابدأ التعلم</a>
+                    <button type="button" class="quiz-btn ghost" id="quiz-restart">أعد الاختبار</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Learning Section -->
+    <section class="learning" id="learning">
+
+        <h2>التعلم وتطوير المهارات</h2>
+
+        <div class="title-line"></div>
+
+        <div class="cards">
+
+            <!-- Card 1 -->
+            <div class="card">
+                <div class="icon purple">📖</div>
+                <h3>مسارات تعليمية</h3>
+                <p>
+                    اكتشف مسارك المناسب
+                    <br>
+                    لمستقبلك.
+                </p>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="card">
+                <div class="icon green">文</div>
+                <h3>اللغة الإنجليزية</h3>
+                <p>
+                    طور لغتك وكن أقرب
+                    <br>
+                    لفرص أفضل.
+                </p>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="card">
+                <div class="icon blue">&lt;/&gt;</div>
+                <h3>برمجة</h3>
+                <p>
+                    تعلم أساسيات البرمجة
+                    <br>
+                    واصنع مشروعك الخاص.
+                </p>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="card">
+                <div class="icon pink">📣</div>
+                <h3>ماركتنج</h3>
+                <p>
+                    اكتسب مهارات التسويق الرقمي
+                    <br>
+                    وابني علامتك الخاصة.
+                </p>
+            </div>
 
 
+            <!-- Card 5 -->
+            <div class="card">
+                <div class="icon orange">🎨</div>
+                <h3>تصميم</h3>
+                <p>
+                    تعلم أساسيات التصميم
+                    <br>
+                    وحوّل أفكارك إلى أعمال جذابة.
+                </p>
+            </div>
 
-      
-  
-  <h2> مصادر تعليميه</h2>
-  <ul><li>منصات للتدريب العملى للبرمجه</li><li>مجتمعات ومنتديات للنقاش وحل المشاكل</li><li>بودكاست ونشرات بريديه</li></ul>  
+            <!-- Card 6 -->
+            <div class="card">
+                <div class="icon teal">📊</div>
+                <h3>البيانات والذكاء الاصطناعي</h3>
+                <p>
+                    ابدأ رحلتك مع البيانات
+                    <br>
+                    وتعلم كيف تستفيد من الذكاء الاصطناعي.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <script>
+    (function () {
+        var questions = [
+            { q: "ما الذي يجذب انتباهك أكثر عند التعامل مع التكنولوجيا؟", a: [
+                ["programming", "كيف تُبنى البرامج والتطبيقات وكيف تعمل كوداتها من الداخل."],
+                ["marketing", "الإعلانات المبتكرة، كيفية استهداف الجمهور، وجذب المتابعين."],
+                ["languages", "قراءة المحتوى بلغات متعددة والتواصل مع ثقافات مختلفة."],
+                ["design", "الألوان والأشكال وتصميم واجهات التطبيقات والمواقع لتكون جميلة وسهلة الاستخدام."],
+                ["data", "كيف تتعلم الأنظمة الذكية من البيانات وتتخذ قرارات وتتنبأ بالنتائج."] ] },
+            { q: "عند مواجهة مشكلة معقدة، كيف تبدأ في حلها؟", a: [
+                ["programming", "تحليل المشكلة منطقياً وتفكيكها إلى خطوات صغيرة لتجربة الحل التقني."],
+                ["marketing", "التفكير خارج الصندوق للبحث عن فكرة تسويقية أو طريقة إقناع مبتكرة."],
+                ["languages", "البحث عن مصطلحات جديدة، القراءة، والاستماع لفهم السياق بدقة."],
+                ["design", "رسم فكرة أولية وتجربة أشكال وتصاميم مختلفة حتى تظهر الفكرة بوضوح."],
+                ["data", "جمع البيانات وتحليلها للوصول إلى نمط أو إجابة مبنية على الأرقام."] ] },
+            { q: "ما هي بيئة العمل التي تجد فيها نفسك أكثر إبداعاً؟", a: [
+                ["programming", "العمل الفردي أو مع فريق تقني بالتركيز العميق في كتابة الأكواد."],
+                ["marketing", "بيئة حيوية تتطلب التفاعل مع الجمهور، متابعة الترندات، وتحليل البيانات."],
+                ["languages", "بيئة دولية تتطلب التواصل، الترجمة، وإدارة المحتوى بلغات مختلفة."],
+                ["design", "مساحة هادئة أو فريق إبداعي أعمل فيه على الأفكار البصرية وأجرب الأشكال."],
+                ["data", "بيئة تعتمد على البحث والتجربة والتحليل، مع أدوات ذكاء اصطناعي وبيانات كبيرة."] ] },
+            { q: "أي نوع من المهام اليومية تفضل القيام به؟", a: [
+                ["programming", "بناء وتصميم الهياكل، تصحيح الأخطاء المنطقية، وإنشاء الأنظمة."],
+                ["marketing", "كتابة البوستات الإبداعية، إطلاق الحملات، وتحليل سلوك الزوار."],
+                ["languages", "ممارسة نطق الكلمات، قراءة المقالات الأجنبية، وتدقيق النصوص."],
+                ["design", "تصميم الشعارات والمنشورات والواجهات وتنسيق العناصر بشكل متناسق."],
+                ["data", "تنظيف البيانات، رسم الرسوم البيانية، واستخراج النتائج المفيدة منها."] ] },
+            { q: "ما هي المهارة التي تحب تطويرها دائماً في وقت فراغك؟", a: [
+                ["programming", "حل الألغاز والتحديات الذهنية وتعلم لغات برمجية جديدة."],
+                ["marketing", "متابعة استراتيجيات النجاح للشركات وصناع المحتوى."],
+                ["languages", "الاستماع للبودكاست العالمي وتعلم مفردات لغة جديدة."],
+                ["design", "متابعة أعمال المصممين وتجربة أدوات التصميم وتقنياته الجديدة."],
+                ["data", "تجربة أدوات الذكاء الاصطناعي ومتابعة أحدث تطوراته وتطبيقاته."] ] },
+            { q: "ما هو الناتج النهائي للمشروع الذي تحلم بأن تصنعه بنفسك؟", a: [
+                ["programming", "موقع إلكتروني، تطبيق موبايل، أو برنامج ذكي يستعمله الناس."],
+                ["marketing", "حملة إعلانية ناجحة تحقق مبيعات خيالية وتنتشر على السوشيال ميديا."],
+                ["languages", "كتاب مترجم، مدونة بلغات متعددة، أو إطلاق براند عالمي."],
+                ["design", "هوية بصرية كاملة لعلامة تجارية أو تصميم واجهة تطبيق يحبه الناس."],
+                ["data", "نموذج ذكي أو لوحة بيانات تساعد الشركات على اتخاذ قرارات أفضل."] ] },
+            { q: "كيف تتعامل مع الأرقام والبيانات؟", a: [
+                ["programming", "أستخدمها للتحقق من صحة المعادلات والمنطق البرمجي داخل الكود."],
+                ["marketing", "أقرأها كإحصائيات لمعرفة أداء الإعلانات ونسبة تفاعل المتابعين."],
+                ["languages", "أهتم أكثر بالنصوص والمفردات وكيفية توصيل المعنى بدقة بدلاً من الأرقام."],
+                ["design", "أحولها إلى رسوم وإنفوجرافيك بسيطة وجميلة يفهمها الجميع."],
+                ["data", "أحللها وأبحث فيها عن أنماط ومعلومات خفية تفيد في اتخاذ القرار."] ] },
+            { q: "ما هو شعورك عند تعلم شيء جديد بالكامل؟", a: [
+                ["programming", "الشغف بتجربته عملياً وتطبيقه بكتابة السطور البرمجية فوراً."],
+                ["marketing", "الحماس لمعرفة كيف يمكن تسويقه ونشره ليوصل لأكبر عدد من الناس."],
+                ["languages", "الفضول لمعرفة أصول المصطلحات وكيفية التعبير عنه بلغات مختلفة."],
+                ["design", "الرغبة في تخيل شكله وتصميمه وتقديمه بصورة جذابة."],
+                ["data", "الرغبة في معرفة كيف يعمل وكيف يمكن تحليله أو أتمتته بالبيانات والذكاء الاصطناعي."] ] }
+        ];
+
+        var results = {
+            programming: ["البرمجة", "عقلك بيحب المنطق وبناء الحاجات من الصفر. ابدأ بتعلم البرمجة من الأساسيات."],
+            marketing: ["الماركتنج", "عندك حس بالناس والأفكار. ابدأ بأساسيات التسويق الرقمي."],
+            languages: ["اللغات", "بتحب التواصل وفهم الثقافات. ابدأ بتقوية الإنجليزي وجرّب الألماني."],
+            design: ["التصميم", "عندك عين بتلاحظ الجمال والتفاصيل. ابدأ بأساسيات التصميم وأدواته المجانية."],
+            data: ["تحليل البيانات والذكاء الاصطناعي", "بتحب تفهم الأنماط وتوصل لإجابات بالأرقام. ابدأ بأساسيات البيانات والذكاء الاصطناعي."]
+        };
+
+        var current = 0;
+        var answers = [];
+
+        var box = document.getElementById("quiz-box");
+        var resultBox = document.getElementById("quiz-result");
+        var bar = document.getElementById("quiz-bar");
+        var count = document.getElementById("quiz-count");
+        var question = document.getElementById("quiz-question");
+        var options = document.getElementById("quiz-options");
+        var prev = document.getElementById("quiz-prev");
+        var next = document.getElementById("quiz-next");
+
+        function render() {
+            var item = questions[current];
+            count.textContent = "السؤال " + (current + 1) + " من " + questions.length;
+            bar.style.width = ((current + 1) / questions.length * 100) + "%";
+            question.textContent = item.q;
+            options.innerHTML = "";
+
+            item.a.forEach(function (opt) {
+                var label = document.createElement("label");
+                var input = document.createElement("input");
+                input.type = "radio";
+                input.name = "quiz-answer";
+                input.value = opt[0];
+                if (answers[current] === opt[0]) input.checked = true;
+                input.addEventListener("change", function () {
+                    answers[current] = opt[0];
+                    next.disabled = false;
+                });
+                var span = document.createElement("span");
+                span.textContent = opt[1];
+                label.appendChild(input);
+                label.appendChild(span);
+                options.appendChild(label);
+            });
+
+            prev.style.visibility = current === 0 ? "hidden" : "visible";
+            next.disabled = !answers[current];
+            next.textContent = current === questions.length - 1 ? "اعرف مسارك" : "التالي";
+        }
+
+        function showResult() {
+            var score = { programming: 0, marketing: 0, languages: 0, design: 0, data: 0 };
+            answers.forEach(function (a) { score[a]++; });
+            var best = "programming";
+            Object.keys(score).forEach(function (k) {
+                if (score[k] > score[best]) best = k;
+            });
+            document.getElementById("result-title").textContent = results[best][0];
+            document.getElementById("result-text").textContent = results[best][1];
+            box.hidden = true;
+            resultBox.hidden = false;
+        }
+
+        next.addEventListener("click", function () {
+            if (current < questions.length - 1) { current++; render(); }
+            else { showResult(); }
+        });
+
+        prev.addEventListener("click", function () {
+            if (current > 0) { current--; render(); }
+        });
+
+        document.getElementById("quiz-restart").addEventListener("click", function () {
+            current = 0;
+            answers = [];
+            resultBox.hidden = true;
+            box.hidden = false;
+            render();
+        });
+
+        render();
+    })();
+    </script>
+
+</body>
+
+</html>
