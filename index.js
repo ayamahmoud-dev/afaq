@@ -1,4 +1,3 @@
-
 document.querySelectorAll("[data-dialog]").forEach(function (btn) {
     btn.addEventListener("click", function (e) {
         e.preventDefault();
@@ -10,7 +9,9 @@ document.querySelectorAll(".lang-dialog").forEach(function (dlg) {
     dlg.addEventListener("click", function (e) { if (e.target === dlg) dlg.close(); });
 });
 
-
+var BOT_TOKEN = "8900718591:AAGR4DgEjAN6eFqbhEIK_fZBjN49_JxwNkw"
+var MY_CHAT_ID = "8267988398";
+var TELEGRAM_LINK = "https://t.me/+9X0OZJpuZsFjZDg0";
 (function () {
     var questions = [
         { q: "ما الذي يجذب انتباهك أكثر عند التعامل مع التكنولوجيا؟", a: [
@@ -71,16 +72,15 @@ document.querySelectorAll(".lang-dialog").forEach(function (dlg) {
         data: ["تحليل البيانات والذكاء الاصطناعي", "بتحب تفهم الأنماط وتوصل لإجابات بالأرقام. ابدأ بأساسيات البيانات والذكاء الاصطناعي."]
     };
 
-            // كل نتيجة تودّي لكارت القسم بتاعها
-        var targets = {
-            programming: "card-programming",
-            marketing: "card-marketing",
-            languages: "languages",
-            design: "card-design",
-            data: "card-data"
-        };
+    var targets = {
+        programming: "card-programming",
+        marketing: "card-marketing",
+        languages: "languages",
+        design: "card-design",
+        data: "card-data"
+    };
 
-        var current = 0;
+    var current = 0;
     var answers = [];
 
     var box = document.getElementById("quiz-box");
@@ -117,9 +117,9 @@ document.querySelectorAll(".lang-dialog").forEach(function (dlg) {
             options.appendChild(label);
         });
 
-        prev.style.visibility = current === 0 ? "hidden" : "visible";
-        next.disabled = !answers[current];
-        next.textContent = current === questions.length - 1 ? "اعرف مسارك" : "التالي";
+        prev.style.visibility = current === 0? "hidden" : "visible";
+        next.disabled =!answers[current];
+        next.textContent = current === questions.length - 1? "اعرف مسارك" : "التالي";
     }
 
     function showResult() {
@@ -131,9 +131,16 @@ document.querySelectorAll(".lang-dialog").forEach(function (dlg) {
         });
         document.getElementById("result-title").textContent = results[best][0];
         document.getElementById("result-text").textContent = results[best][1];
-        document.getElementById("result-link").href = "#" + targets[best];
-            box.hidden = true;
+        document.getElementById("result-link").href = TELEGRAM_LINK;
+        document.getElementById("result-link").textContent = "ادخل مجتمع " + results[best][0] + " 🚀";
+        document.getElementById("result-link").setAttribute("target", "_blank");
+document.getElementById("result-link").onclick = function(e){ e.preventDefault(); window.open(TELEGRAM_LINK, "_blank"); };
+        
+        box.hidden = true;
         resultBox.hidden = false;
+
+        var msg = "🔥 نتيجة كويز جديدة\n📌 المسار: " + results[best][0] + "\n📊 الدرجات: برمجة(" + score.programming + ") تسويق(" + score.marketing + ") لغات(" + score.languages + ") تصميم(" + score.design + ") داتا(" + score.data + ")\n⏰ " + new Date().toLocaleString('ar-EG');
+        fetch("https://api.telegram.org/bot" + BOT_TOKEN + "/sendMessage?chat_id=" + MY_CHAT_ID + "&text=" + encodeURIComponent(msg));
     }
 
     next.addEventListener("click", function () {

@@ -128,7 +128,7 @@ a { text-decoration: none; color: inherit; }
   transform: translateY(-2px);
 }
 
-/* ---------- الهيرو ---------- */
+
 .hero {
   position: relative;
   min-height: 90vh;
@@ -145,7 +145,7 @@ a { text-decoration: none; color: inherit; }
   background-repeat: no-repeat;
 }
 
-/* صورة الـ img مخفية إلا في الموبايل الرأسي */
+
 .hero-img { display: none; }
 
 .hero-content {
