@@ -828,3 +828,23 @@ button.lang-item:hover { border-color: var(--accent); background: #faf8fd; }
     font-size: 1.05rem;
   }
 }
+.footer .social a.insta{
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* لوجو الانستا الأبيض جوة */
+.footer .social a.insta::after{
+  content: "";
+  width: 22px;
+  height: 22px;
+  background: url("https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png") no-repeat center / contain;
+  filter: brightness(0) invert(1);
+}
