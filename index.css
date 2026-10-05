@@ -1,4 +1,4 @@
-:root {
+  :root {
   --primary: #2d1f4a;
   --primary-soft: #3b2a6b;
   --accent: #a58bdc;
@@ -128,7 +128,7 @@ a { text-decoration: none; color: inherit; }
   transform: translateY(-2px);
 }
 
-
+/* ---------- الهيرو ---------- */
 .hero {
   position: relative;
   min-height: 90vh;
@@ -145,7 +145,7 @@ a { text-decoration: none; color: inherit; }
   background-repeat: no-repeat;
 }
 
-
+/* صورة الـ img مخفية إلا في الموبايل الرأسي */
 .hero-img { display: none; }
 
 .hero-content {
@@ -770,4 +770,61 @@ button.lang-item:hover { border-color: var(--accent); background: #faf8fd; }
   border-radius: 25px;
   text-decoration: none;
   font-weight: bold;
+}
+/* ===== تظبيط الهيرو: الكلام بعيد عن البنت والصورة واضحة =====
+   الملف ده بيتحط بعد index.css ويغيّر الهيرو بس. */
+
+/* كمبيوتر وتابلت: الكلام يتزحزح شوية ناحية الشمال، والبنت على اليمين */
+.hero {
+  min-height: 90vh;
+  padding-right: 16%;
+  background-position: center bottom;
+}
+
+.hero-content { max-width: 560px; }
+
+/* فون أفقي: ارتفاع الشاشة صغير، فنصغّر الكلام ونخلي الهيرو بطول الشاشة */
+@media (orientation: landscape) and (max-height: 520px) {
+  .hero {
+    min-height: 100vh;
+    padding: 24px 5%;
+    padding-right: 18%;
+    background-position: 85% bottom;
+  }
+
+  .hero-content { max-width: 500px; }
+  .hero h1 { font-size: 1.9rem; margin-bottom: 4px; }
+  .hero h2 { font-size: 1rem; margin-bottom: 8px; }
+  .hero p { font-size: 0.95rem; }
+  .hero-button {
+    margin-top: 12px;
+    padding: 10px 34px;
+    font-size: 1rem;
+  }
+}
+
+/* فون رأسي: الكلام فوق في السما، والبنت تحت من غير ما حاجة تغطي عليها */
+@media (orientation: portrait) and (max-width: 900px) {
+  .hero {
+    min-height: 100vh;
+    min-height: max(100svh, 640px);
+    align-items: flex-start;
+    padding: 28px 5% 0;
+    background-position: 100% bottom;
+  }
+
+  /* طبقة خفيفة فوق بس عشان الكلام يتقري، وبتخلص قبل ما توصل للبنت */
+  .hero::before {
+    background: linear-gradient(to bottom, rgba(247, 245, 246, 0.5), rgba(247, 245, 246, 0) 32%);
+  }
+
+  .hero-content { max-width: 100%; }
+  .hero h1 { font-size: clamp(1.9rem, 8vw, 2.4rem); line-height: 1.35; margin-bottom: 4px; }
+  .hero h2 { font-size: 1.05rem; margin-bottom: 10px; }
+  .hero p { font-size: 0.98rem; }
+  .hero-button {
+    margin-top: 14px;
+    padding: 12px 36px;
+    font-size: 1.05rem;
+  }
 }
