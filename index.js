@@ -9,13 +9,10 @@ document.querySelectorAll(".lang-dialog").forEach(function (dlg) {
     dlg.addEventListener("click", function (e) { if (e.target === dlg) dlg.close(); });
 });
 
-/* ===== رابط مجتمع تليجرام (ده رابط دعوة علني وعادي إنه يظهر) ===== */
+
 var TELEGRAM_LINK = "https://t.me/+9X0OZJpuZsFjZDg0";
 
-/* ===== النتيجة والفيد باك بتوصلك على الإيميل =====
-   بنستخدم FormSubmit (مجاني ومن غير حساب). أول مرة بس هيبعتلك إيميل تأكيد
-   لازم تضغطي فيه "Activate". بعدها كل نتيجة وفيد باك بتوصل على الإيميل.
-   مفيش أي بيانات شخصية: بس اسم المسار والدرجات والتقييم. */
+
 var NOTIFY_ENDPOINT = "https://formsubmit.co/ajax/ayamahmoud.gruop@gmail.com";
 
 function notify(subject, fields) {
@@ -183,14 +180,14 @@ function notify(subject, fields) {
 })();
 
 
-/* ===== فيد باك بعد النتيجة: مفيدة / غير مفيدة ===== */
+
 (function () {
   var resultBox = document.getElementById("quiz-result");
   var titleEl = document.getElementById("result-title");
   var textEl = document.getElementById("result-text");
   if (!resultBox || !textEl) return;
 
-  // تنسيق البلوك (متحط هنا عشان مفيش محتاج ملف CSS تاني)
+  
   var css = document.createElement("style");
   css.textContent =
     ".fb{margin:14px 0 4px;padding:14px;border:1px dashed #d8d2e3;border-radius:14px}" +
