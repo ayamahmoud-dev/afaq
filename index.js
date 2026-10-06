@@ -9,9 +9,25 @@ document.querySelectorAll(".lang-dialog").forEach(function (dlg) {
     dlg.addEventListener("click", function (e) { if (e.target === dlg) dlg.close(); });
 });
 
-var BOT_TOKEN = "8900718591:AAGR4DgEjAN6eFqbhEIK_fZBjN49_JxwNkw"
-var MY_CHAT_ID = "8267988398";
+/* ===== رابط مجتمع تليجرام (ده رابط دعوة علني وعادي إنه يظهر) ===== */
 var TELEGRAM_LINK = "https://t.me/+9X0OZJpuZsFjZDg0";
+
+/* ===== النتيجة والفيد باك بتوصلك على الإيميل =====
+   بنستخدم FormSubmit (مجاني ومن غير حساب). أول مرة بس هيبعتلك إيميل تأكيد
+   لازم تضغطي فيه "Activate". بعدها كل نتيجة وفيد باك بتوصل على الإيميل.
+   مفيش أي بيانات شخصية: بس اسم المسار والدرجات والتقييم. */
+var NOTIFY_ENDPOINT = "https://formsubmit.co/ajax/ayamahmoud.gruop@gmail.com";
+
+function notify(subject, fields) {
+    var data = { _subject: subject, _template: "table", _captcha: "false", _honey: "" };
+    Object.keys(fields).forEach(function (k) { data[k] = fields[k]; });
+    fetch(NOTIFY_ENDPOINT, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", "Accept": "application/json" },
+        body: JSON.stringify(data)
+    }).catch(function () {});
+}
+
 (function () {
     var questions = [
         { q: "ما الذي يجذب انتباهك أكثر عند التعامل مع التكنولوجيا؟", a: [
@@ -117,9 +133,9 @@ var TELEGRAM_LINK = "https://t.me/+9X0OZJpuZsFjZDg0";
             options.appendChild(label);
         });
 
-        prev.style.visibility = current === 0? "hidden" : "visible";
-        next.disabled =!answers[current];
-        next.textContent = current === questions.length - 1? "اعرف مسارك" : "التالي";
+        prev.style.visibility = current === 0 ? "hidden" : "visible";
+        next.disabled = !answers[current];
+        next.textContent = current === questions.length - 1 ? "اعرف مسارك" : "التالي";
     }
 
     function showResult() {
@@ -134,13 +150,16 @@ var TELEGRAM_LINK = "https://t.me/+9X0OZJpuZsFjZDg0";
         document.getElementById("result-link").href = TELEGRAM_LINK;
         document.getElementById("result-link").textContent = "ادخل مجتمع " + results[best][0] + " 🚀";
         document.getElementById("result-link").setAttribute("target", "_blank");
-document.getElementById("result-link").onclick = function(e){ e.preventDefault(); window.open(TELEGRAM_LINK, "_blank"); };
-        
+        document.getElementById("result-link").onclick = function (e) { e.preventDefault(); window.open(TELEGRAM_LINK, "_blank"); };
+
         box.hidden = true;
         resultBox.hidden = false;
 
-        var msg = "🔥 نتيجة كويز جديدة\n📌 المسار: " + results[best][0] + "\n📊 الدرجات: برمجة(" + score.programming + ") تسويق(" + score.marketing + ") لغات(" + score.languages + ") تصميم(" + score.design + ") داتا(" + score.data + ")\n⏰ " + new Date().toLocaleString('ar-EG');
-        fetch("https://api.telegram.org/bot" + BOT_TOKEN + "/sendMessage?chat_id=" + MY_CHAT_ID + "&text=" + encodeURIComponent(msg));
+        notify("🔥 نتيجة كويز جديدة - " + results[best][0], {
+            "المسار": results[best][0],
+            "الدرجات": "برمجة(" + score.programming + ") تسويق(" + score.marketing + ") لغات(" + score.languages + ") تصميم(" + score.design + ") داتا(" + score.data + ")",
+            "الوقت": new Date().toLocaleString("ar-EG")
+        });
     }
 
     next.addEventListener("click", function () {
@@ -161,4 +180,80 @@ document.getElementById("result-link").onclick = function(e){ e.preventDefault()
     });
 
     render();
+})();
+
+
+/* ===== فيد باك بعد النتيجة: مفيدة / غير مفيدة ===== */
+(function () {
+  var resultBox = document.getElementById("quiz-result");
+  var titleEl = document.getElementById("result-title");
+  var textEl = document.getElementById("result-text");
+  if (!resultBox || !textEl) return;
+
+  // تنسيق البلوك (متحط هنا عشان مفيش محتاج ملف CSS تاني)
+  var css = document.createElement("style");
+  css.textContent =
+    ".fb{margin:14px 0 4px;padding:14px;border:1px dashed #d8d2e3;border-radius:14px}" +
+    ".fb p.fb-q{font-weight:700;color:var(--primary,#2d1f4a);margin:0 0 10px}" +
+    ".fb-btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}" +
+    ".fb-btn{border:1.5px solid var(--accent,#a58bdc);background:#fff;color:var(--primary-soft,#3b2a6b);" +
+    "padding:9px 22px;border-radius:14px;font-weight:700;font-family:inherit;font-size:.95rem;cursor:pointer}" +
+    ".fb-btn:hover{background:#ede7f8}" +
+    ".fb-btn:disabled{cursor:default;opacity:.55}" +
+    ".fb-btn.picked{background:var(--primary-soft,#3b2a6b);color:#fff;border-color:transparent;opacity:1}" +
+    ".fb-thanks{margin:10px 0 0;color:var(--muted,#6b6480);font-size:.9rem}";
+  document.head.appendChild(css);
+
+  function send(answer) {
+    var track = titleEl ? titleEl.textContent.trim() : "غير معروف";
+    notify("📝 فيد باك على آفاق - " + track, {
+      "المسار": track,
+      "الفيدباك": answer,
+      "الوقت": new Date().toLocaleString("ar-EG")
+    });
+  }
+
+  function build() {
+    var old = document.getElementById("feedback-box");
+    if (old) old.remove();
+
+    var box = document.createElement("div");
+    box.className = "fb";
+    box.id = "feedback-box";
+
+    var q = document.createElement("p");
+    q.className = "fb-q";
+    q.textContent = "هل النتيجة  كانت مفيدة؟";
+    box.appendChild(q);
+
+    var btns = document.createElement("div");
+    btns.className = "fb-btns";
+
+    function makeBtn(label, answer) {
+      var b = document.createElement("button");
+      b.type = "button";
+      b.className = "fb-btn";
+      b.textContent = label;
+      b.addEventListener("click", function () {
+        Array.prototype.forEach.call(btns.children, function (x) { x.disabled = true; });
+        b.classList.add("picked");
+        var thanks = document.createElement("p");
+        thanks.className = "fb-thanks";
+        thanks.textContent = "شكراً لرأيك 🌷";
+        box.appendChild(thanks);
+        send(answer);
+      });
+      return b;
+    }
+
+    btns.appendChild(makeBtn("👍 مفيده", "مفيده"));
+    btns.appendChild(makeBtn("👎 غير مفيده", "غير مفيده"));
+    box.appendChild(btns);
+
+    textEl.insertAdjacentElement("afterend", box);
+  }
+
+  new MutationObserver(function () {
+    if (!resultBox.hidden) build();
+  }).observe(resultBox, { attributes: true, attributeFilter: ["hidden"] });
 })();
