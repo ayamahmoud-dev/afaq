@@ -2,7 +2,7 @@
 
 منصة تفاعلية تساعدك تكتشف شغفك وتحدد المجال اللي يناسب شخصيتك.
 
-🔗 **Live Demo:** https://ayamahmoud188178-cmyk.github.io/afaq/
+🔗 **Live Demo:** https://ayamahmoud-dev.github.io/afaq/
 
 ### 🛠️ Built With
 - HTML5
