@@ -10,10 +10,20 @@ document.querySelectorAll(".lang-dialog").forEach(function (dlg) {
 });
 
 
+/* صور الأيقونات: لو صورة مش موجودة، يرجع الإيموجي بتاعها (متخزن في data-fallback) */
+document.querySelectorAll(".icon img[data-fallback]").forEach(function (img) {
+    function useFallback() {
+        img.replaceWith(document.createTextNode(img.dataset.fallback));
+    }
+    if (img.complete && img.naturalWidth === 0) { useFallback(); }
+    else { img.addEventListener("error", useFallback); }
+});
+
+
 var TELEGRAM_LINK = "https://t.me/+9X0OZJpuZsFjZDg0";
 
 
-var NOTIFY_ENDPOINT = "https://formsubmit.co/ajax/ayamahmoud.gruop@gmail.com";
+var NOTIFY_ENDPOINT = "https://formsubmit.co/ajax/c947c76e870a310bd6002305343d5a8e";
 
 function notify(subject, fields) {
     var data = { _subject: subject, _template: "table", _captcha: "false", _honey: "" };
@@ -152,11 +162,12 @@ function notify(subject, fields) {
         box.hidden = true;
         resultBox.hidden = false;
 
-        notify("🔥 نتيجة كويز جديدة - " + results[best][0], {
-            "المسار": results[best][0],
-            "الدرجات": "برمجة(" + score.programming + ") تسويق(" + score.marketing + ") لغات(" + score.languages + ") تصميم(" + score.design + ") داتا(" + score.data + ")",
-            "الوقت": new Date().toLocaleString("ar-EG")
-        });
+notify("🔥 نتيجة كويز جديدة - " + results[best][0], {
+    "الاسم": document.getElementById("userName").value,
+    "المسار": results[best][0],
+    "الدرجات": "(" + "برمجة" + score.programming + ") تسويق (" + score.marketing + ") لغات (" + score.languages + ") تصميم (" + score.design + ") داتا (" + score.data + ")",
+    "الوقت": new Date().toLocaleString("ar-EG")
+});
     }
 
     next.addEventListener("click", function () {
@@ -186,20 +197,6 @@ function notify(subject, fields) {
   var titleEl = document.getElementById("result-title");
   var textEl = document.getElementById("result-text");
   if (!resultBox || !textEl) return;
-
-  
-  var css = document.createElement("style");
-  css.textContent =
-    ".fb{margin:14px 0 4px;padding:14px;border:1px dashed #d8d2e3;border-radius:14px}" +
-    ".fb p.fb-q{font-weight:700;color:var(--primary,#2d1f4a);margin:0 0 10px}" +
-    ".fb-btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}" +
-    ".fb-btn{border:1.5px solid var(--accent,#a58bdc);background:#fff;color:var(--primary-soft,#3b2a6b);" +
-    "padding:9px 22px;border-radius:14px;font-weight:700;font-family:inherit;font-size:.95rem;cursor:pointer}" +
-    ".fb-btn:hover{background:#ede7f8}" +
-    ".fb-btn:disabled{cursor:default;opacity:.55}" +
-    ".fb-btn.picked{background:var(--primary-soft,#3b2a6b);color:#fff;border-color:transparent;opacity:1}" +
-    ".fb-thanks{margin:10px 0 0;color:var(--muted,#6b6480);font-size:.9rem}";
-  document.head.appendChild(css);
 
   function send(answer) {
     var track = titleEl ? titleEl.textContent.trim() : "غير معروف";
