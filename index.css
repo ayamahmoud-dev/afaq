@@ -231,17 +231,25 @@ a { text-decoration: none; color: inherit; }
   font-size: 0.95rem;
 }
 
+/* الأيقونة: مربع بحواف مدورة وأكبر، عشان الصورة تبان واضحة */
 .icon {
-  width: 68px;
-  height: 68px;
+  width: 104px;
+  height: 104px;
   margin: 0 auto;
-  border-radius: 50%;
+  border-radius: 26px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.6rem;
+  font-size: 2.6rem;
   font-weight: 800;
   direction: ltr;
+}
+
+.icon img {
+  width: 82%;
+  height: 82%;
+  object-fit: contain;
+  display: block;
 }
 
 .icon.purple { background: #e5d4f5; color: var(--primary-soft); }
@@ -719,7 +727,7 @@ button.lang-item:hover { border-color: var(--accent); background: #faf8fd; }
 
 @media (min-width: 721px) and (max-width: 980px) {
   .card { padding: 20px 10px; }
-  .card .icon { width: 52px; height: 52px; font-size: 1.2rem; }
+  .card .icon { width: 84px; height: 84px; border-radius: 22px; font-size: 2.1rem; }
   .card h3 { font-size: 0.95rem; }
   .card p { font-size: 0.8rem; line-height: 1.6; }
   button.lang-item { padding: 10px; font-size: 0.85rem; }
@@ -828,3 +836,99 @@ button.lang-item:hover { border-color: var(--accent); background: #faf8fd; }
     font-size: 1.05rem;
   }
 }
+
+
+/* ===== خانة الاسم في الاختبار ===== */
+#userName {
+  display: block;
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 18px;
+  border: 1.5px solid #e6e0ef;
+  border-radius: 14px;
+  background: var(--bg);
+  color: var(--primary);
+  font-family: inherit;
+  font-size: 1rem;
+  text-align: right;
+}
+
+#userName:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+/* ===== فيد باك بعد النتيجة (كان متحط جوه ملف الجافاسكريبت) ===== */
+.fb { margin: 14px 0 4px; padding: 14px; border: 1px dashed #d8d2e3; border-radius: 14px; }
+.fb p.fb-q { font-weight: 700; color: var(--primary, #2d1f4a); margin: 0 0 10px; }
+.fb-btns { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+.fb-btn {
+  border: 1.5px solid var(--accent, #a58bdc);
+  background: #fff;
+  color: var(--primary-soft, #3b2a6b);
+  padding: 9px 22px;
+  border-radius: 14px;
+  font-weight: 700;
+  font-family: inherit;
+  font-size: .95rem;
+  cursor: pointer;
+}
+.fb-btn:hover { background: #ede7f8; }
+.fb-btn:disabled { cursor: default; opacity: .55; }
+.fb-btn.picked { background: var(--primary-soft, #3b2a6b); color: #fff; border-color: transparent; opacity: 1; }
+.fb-thanks { margin: 10px 0 0; color: var(--muted, #6b6480); font-size: .9rem; }
+
+/* ===== الفوتر (كان متكتب inline جوه الـ HTML) ===== */
+.site-footer {
+  background: #0f0f0f;
+  color: white;
+  padding: 35px 20px;
+  text-align: center;
+  font-family: 'Cairo', sans-serif;
+}
+
+.footer-title { margin: 0; font-size: 20px; font-weight: bold; }
+.footer-sub { margin: 8px 0 20px 0; font-size: 14px; opacity: 0.9; }
+
+.footer-row {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.footer-row-first { margin-bottom: 12px; }
+
+.footer-link {
+  color: white;
+  text-decoration: none;
+  border: 1px solid white;
+  padding: 9px 20px;
+  border-radius: 30px;
+  font-size: 14px;
+}
+
+.footer-insta {
+  width: 46px;
+  height: 46px;
+  border-radius: 14px;
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.footer-cta {
+  color: white;
+  text-decoration: none;
+  padding: 10px 25px;
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.footer-cta-quiz { background: #7c6af0; }
+.footer-cta-wa { background: #222; border: 1px solid #7c6af0; }
+
+.footer-note { margin: 25px 0 0 0; font-size: 11px; line-height: 1.7; opacity: 0.45; }
